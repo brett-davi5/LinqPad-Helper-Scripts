@@ -1,10 +1,13 @@
 <Query Kind="Program" />
 
+//Iterates through all files within a particular file path, looking for a specific word, phrase, or needle in the haystack.
+//This pivots off of file types so you know "Oh, this is located in an .xslt" or something akin to this
+
 void Main()
 {
 	var result = new List<JoeBob>();
 	var result2 = new List<JoeBob>();
-	var list = Directory.EnumerateDirectories(@"C:\src\DPISpecifications");
+	var list = Directory.EnumerateDirectories(@"C:\src\MyPathway");
 	foreach (var bob in list)
 	{
 		var tempList = Directory.EnumerateFiles(bob).Where(x=>x.EndsWith(".xslt"));
@@ -30,8 +33,3 @@ public class JoeBob
 	public string LineNumber { get; set; }
 	public string Line { get; set;}
 }
-// Define other methods and classes here
-
-//0uGaiConjugate
-
-//admin$%234admin
