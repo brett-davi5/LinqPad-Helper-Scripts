@@ -1,0 +1,16 @@
+//this clears empty lines from a .txt file
+//especially useful for .xslx files after you've removed duplicates or need to format them elsewhere (Office, etc.)
+
+HashSet<string> stuff = new HashSet<string>();
+HashSet<string> badStuff = new HashSet<string>();
+foreach (string line in File.ReadLines("C:/Users/brett.davis/Documents/ALM Investigations/temp.txt"))
+{
+	if(line.Equals(""))
+	{
+		badStuff.Add(line);
+	}else{
+		stuff.Add(line);
+	}
+}
+
+stuff.Dump();
